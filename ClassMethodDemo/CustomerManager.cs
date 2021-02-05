@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassMethodDemo
 {
-    public class CustomerManager :ICustomerDal
+    public class CustomerManager :ICustomerService
     {
         ICustomerDal _customerDal;
-        public CustomerManager()
-        {
-
-        }
-
-
         public CustomerManager(ICustomerDal customerDal)
         {
             _customerDal = customerDal;
@@ -32,7 +26,8 @@ namespace ClassMethodDemo
 
         public List<Customer> GetAll()
         {
-           return  _customerDal.GetAll();
+           
+            return _customerDal.GetAll();
         }
 
         public void Update(Customer customer)
