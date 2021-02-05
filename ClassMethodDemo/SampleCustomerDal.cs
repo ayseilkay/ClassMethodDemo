@@ -6,34 +6,28 @@ using System.Threading.Tasks;
 
 namespace ClassMethodDemo
 {
-    public class CustomerManager :ICustomerService
+    public class SampleCustomerDal : ICustomerDal
     {
-        ICustomerDal _customerDal;
-  
-        public CustomerManager(ICustomerDal customerDal)
-        {
-            _customerDal = customerDal;
-        }
        
         public void Add(Customer customer)
         {
-            Console.WriteLine("Customer added !");
+            Console.WriteLine("Customer added");
         }
 
         public void Delete(Customer customer)
         {
-            Console.WriteLine("Customer deleted !");
+            Console.WriteLine("Customer deleted");
         }
 
         public List<Customer> GetAll()
         {
-           
-            return  _customerDal.GetAll();
+            Console.WriteLine("Customer listed !");
+            return new List<Customer>();
         }
 
         public void Update(Customer customer)
         {
-            Console.WriteLine("Customer updated !");
+            Console.WriteLine("Customer updated");
         }
     }
 }

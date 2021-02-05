@@ -16,11 +16,11 @@ namespace ClassMethodDemo
             customer1.LastName = "İlkay";
             customer1.Address = "İzmir";
 
-            CustomerManager customerManager = new CustomerManager();
+            CustomerManager customerManager = new CustomerManager(new SampleCustomerDal());
             customerManager.Add(customer1);
             customerManager.Update(customer1);
             customerManager.Delete(customer1);
-            //customerManager.GetAll(); 
+            customerManager.GetAll(); 
             Console.ReadLine();
 
         }
